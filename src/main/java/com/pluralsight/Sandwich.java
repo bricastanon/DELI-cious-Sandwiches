@@ -64,4 +64,14 @@ public class Sandwich implements Customize {
     }
     public boolean isToasted() { return isToasted;
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Size: ").append(size).append(", Bread: ").append(breadType).append(", Toasted: ").append(isToasted).append("\nToppings: ");
+        for (Topping topping : toppings) {
+            sb.append(topping.getName()).append(", ");
+        }
+        return sb.toString();
+    }
+
 }

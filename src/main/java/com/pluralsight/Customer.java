@@ -1,14 +1,19 @@
 package com.pluralsight;
 
 public class Customer {
-    private String mane;
+    private String name;
     private String email;
 
-    public Customer(String mane, String email) {
-        this.mane = mane;
+    public Customer() {
+        this.name = name;
         this.email = email;
     }
-    public String getMane() { return mane;
+
+    public Customer(String name, String email) {
+
+    }
+
+    public String getName() { return name;
     }
     public String getEmail() { return email;
     }

@@ -16,4 +16,9 @@ public class Drink {
     }
     public void remove(Drink drink) {
     }
+    @Override
+    public String toString() {
+        return "Drink: " + name + ", Price: $" + price;
+    }
+
 }

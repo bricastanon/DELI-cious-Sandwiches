@@ -1,48 +1,79 @@
 package com.pluralsight;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class OrderManager {
     private Scanner scanner = new Scanner(System.in);
+    private Order currentOrder;
 
-    public void startOrder() {
-        System.out.println("Welcome to DELI-cious Sandwich Shop! ");
-        Customer customer = createCustomer();
-        Order order = new Order(customer, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
-
-        boolean continueOrdering = true;
-        while (continueOrdering) {
-            System.out.println("What would you like to order? ");
-            System.out.println("----------------------------- ");
-            System.out.println("1. Sandwich ");
-            System.out.println("2. Drink ");
-            System.out.println("3. Chips ");
-            System.out.println("4. Complete Order ");
+    public void displayHomeScreen() {
+        while (true) {
+            System.out.println("Welcome to DELI-cious Sandwich Shop!");
+            System.out.println("1) New Order");
+            System.out.println("0) Exit");
             int choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); // Consume newline
+            Customer customer = createCustomer();
+            Order order = new Order(customer, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
             switch (choice) {
                 case 1:
-                    order.addSandwich(createSandwich());
+                    startNewOrder();
                     break;
-                case 2:
-                    order.addDrink(createDrink());
-                    break;
-                case 3:
-                    order.addChips(createChips());
-                    break;
-                case 4:
-                    continueOrdering = false;
-                    break;
+                case 0:
+                    System.out.println("Exiting the application. Goodbye!");
+                    return; // Exit the application
                 default:
-                    System.out.println("Invalid - Please try again ");
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
-        order.displayOrderDetails();
-        double totalPrice = TotalCost.calculateTotal(order);
-        System.out.println("Your total cost comes out to: $ " + totalPrice);
     }
 
+    private void startNewOrder() {
+        System.out.println("Starting a new order ");
+        System.out.println("--------------------");
+        currentOrder = new Order(new Customer(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+        displayOrderScreen();
+    }
+
+    private void displayOrderScreen() {
+        while (true) {
+            System.out.println("What would you like to order? ");
+            System.out.println("1) Add Sandwich");
+            System.out.println("2) Add Drink");
+            System.out.println("3) Add Chips");
+            System.out.println("4) Checkout");
+            System.out.println("0) Cancel Order");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    addSandwich();
+                    break;
+                case 2:
+                    addDrink();
+                    break;
+                case 3:
+                    addChips();
+                    break;
+                case 4:
+                    checkout();
+                    return;
+                case 0:
+                    cancelOrder();
+                    displayHomeScreen();
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
     private Customer createCustomer() {
         System.out.println("Enter your name: ");
         String name = scanner.nextLine();
@@ -51,7 +82,7 @@ public class OrderManager {
         return new Customer(name, email);
     }
 
-    private Sandwich createSandwich() {
+    private Sandwich addSandwich() {
         System.out.println("What size would you like? (4, 8, 12 inches): ");
         String size = scanner.nextLine();
         System.out.println("What bread would you like? (white, wheat, rye, wrap): ");
@@ -155,40 +186,87 @@ public class OrderManager {
             if (!removeTopping) {
                 sandwich.addToppings(new RegularTopping(topping));
             }
+            currentOrder.addSandwich(sandwich);
+            System.out.println("Sandwich added to the order.");
         }
     }
 
-    private Drink createDrink() {
-        String size;
+
+    private void addDrink() {
+        System.out.println("Add Drink");
+        System.out.println("Enter drink size (small, medium, large): ");
+        String size = scanner.nextLine();
         double price;
-        while (true) {
-            System.out.print("Enter drink size (small, medium, large): ");
-            size = scanner.nextLine().toLowerCase();
-            if (size.equals("small")) {
+        switch (size.toLowerCase()) {
+            case "small":
                 price = 2.00;
                 break;
-            } else if (size.equals("medium")) {
+            case "medium":
                 price = 2.50;
                 break;
-            } else if (size.equals("large")) {
+            case "large":
                 price = 3.00;
                 break;
-            } else {
+            default:
                 System.out.println("Invalid drink size. Please try again.");
-            }
+                return;
         }
 
         System.out.print("Enter drink flavor: ");
         String flavor = scanner.nextLine();
 
-        return new Drink(size + " " + flavor, price);
+        Drink drink = new Drink(size + " " + flavor, price);
+        currentOrder.addDrink(drink);
+        System.out.println("Drink added to the order.");
     }
 
-    private Chip createChips() {
+    private void addChips() {
+        System.out.println("Add Chips");
         System.out.println("What chips would you like? (original lays, lay bbq, sour cream and onion, sun chips): ");
         String type = scanner.nextLine();
         double price = 1.50;
-        return new Chip(type, price);
+
+        Chip chip = new Chip(type, price);
+        currentOrder.addChips(chip);
+        System.out.println("Chips added to the order.");
+    }
+
+    private void checkout() {
+        System.out.println("Checkout");
+        currentOrder.displayOrderDetails();
+        double totalPrice = TotalCost.calculateTotal(currentOrder);
+        System.out.println("Your total cost comes out to: $ " + totalPrice);
+        System.out.println("1) Confirm");
+        System.out.println("0) Cancel Order");
+
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        if (choice == 1) {
+            saveOrderToFile(currentOrder);
+            System.out.println("Order confirmed and receipt saved.");
+        } else {
+            System.out.println("Order cancelled.");
+        }
+    }
+
+    private void cancelOrder() {
+        System.out.println("Order cancelled. Returning to home screen.");
+    }
+
+    private void saveOrderToFile(Order order) {
+        String folderName = "receipts";
+        File folder = new File(folderName);
+        if (!folder.exists()) {
+            folder.mkdir();
+        }
+
+        String fileName = folderName + "/" + new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date()) + ".txt";
+        try (FileWriter writer = new FileWriter(fileName)) {
+            writer.write(order.toString()); // Assuming your Order class has a meaningful toString() method
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

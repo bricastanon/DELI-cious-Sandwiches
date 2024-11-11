@@ -16,4 +16,9 @@ public class Chip {
     }
     public void remove(Chip chip) {
     }
+    @Override
+    public String toString() {
+        return "Chips: " + name + ", Price: $" + price;
+    }
+
 }
