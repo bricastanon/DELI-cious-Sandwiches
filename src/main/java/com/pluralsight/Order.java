@@ -40,11 +40,11 @@ public class Order implements DisplayOrder {
     }
     public void setSandwiches(List<Sandwich> sandwiches) { this.sandwiches = sandwiches;
     }
-    public List<Drink> getDrink() { return drink;
+    public List<Drink> getDrinks() { return drink;
     }
     public void setDrink(List<Drink> drink) { this.drink = drink;
     }
-    public List<Chip> getChip() { return chip;
+    public List<Chip> getChips() { return chip;
     }
     public void setChip(List<Chip> chip) { this.chip = chip;
     }
