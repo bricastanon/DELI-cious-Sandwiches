@@ -1,0 +1,9 @@
+Customer: Brianna
+Email: brianna_castanon@gmail.com
+Sandwiches:
+Size: 8, Bread: white, Toasted: true
+Toppings: chicken, american, lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, guacamole
+Extra Toppings: chicken (extra, $1.0), american (extra, $0.6)
+Drink: medium coke, Price: $2.5
+Chips: original lays, Price: $1.5
+Total Price: $16.1

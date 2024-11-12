@@ -109,7 +109,7 @@ public class OrderManager {
         System.out.println("Would you like to add extra meat? (yes/no): ");
         boolean extraMeat = scanner.nextLine().equalsIgnoreCase("yes");
         if (extraMeat) {
-            sandwich.addToppings(new ExtraTopping(meat, calculateExtraMeatCost(sandwich.getSize())));
+            sandwich.addExtraToppings(new ExtraTopping(meat, calculateExtraMeatCost(sandwich.getSize())));
         }
     }
 
@@ -147,7 +147,7 @@ public class OrderManager {
             System.out.println("Would you like to add extra cheese? (yes/no) ");
             boolean extraCheese = scanner.nextLine().equalsIgnoreCase("yes");
             if (extraCheese) {
-                sandwich.addToppings(new ExtraTopping(cheese, calculateExtraCheeseCost(sandwich.getSize())));
+                 sandwich.addExtraToppings(new ExtraTopping(cheese, calculateExtraCheeseCost(sandwich.getSize())));
             }
         }
     }

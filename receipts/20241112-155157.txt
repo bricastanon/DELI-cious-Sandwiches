@@ -1,0 +1,7 @@
+Customer: Brianna
+Email: brianna@gmail.com
+Sandwiches:
+Size: 12, Bread: white, Toasted: true
+Toppings: salami, american, lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, guacamole
+Extra Toppings: salami (extra, $1.5), american (extra, $0.9)
+Total Price: $13.75

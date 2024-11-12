@@ -1,0 +1,8 @@
+Customer: Gracie
+Email: gracie@gmail.com
+Sandwiches:
+Size: 12, Bread: white, Toasted: true
+Toppings: steak, american, lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, pickles, guacamole, mushrooms, 
+Drink: large coke, Price: $3.0
+Chips: original lays, Price: $1.5
+Total Price: $13.0

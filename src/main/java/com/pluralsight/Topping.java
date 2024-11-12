@@ -12,4 +12,7 @@ public class Topping {
     }
     public void remove(Topping topping) {
     }
+    public double getPrice() {
+        return 0.0; // no additional cost for toppings included
+    }
 }
