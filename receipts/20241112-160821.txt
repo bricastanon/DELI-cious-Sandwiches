@@ -1,0 +1,9 @@
+Customer: Brianna
+Email: brianna@gmail.com
+Sandwiches:
+Size: 8
+Bread: white
+Toasted: true
+Toppings: chicken, american, lettuce, peppers
+Extra Toppings: 
+Total Price: $10.5
