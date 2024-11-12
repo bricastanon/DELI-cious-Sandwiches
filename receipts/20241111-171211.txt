@@ -1,0 +1,24 @@
+Customer: null
+Email: null
+Sandwiches:
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Size: 4, Bread: wheat, Toasted: true
+Toppings: 
+Drinks:
+Chips:
+Total Price: $49.5

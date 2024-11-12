@@ -17,6 +17,16 @@ public class Order implements DisplayOrder {
     }
 
     private double calculateTotal() {
+        totalPrice = 0;
+        for (Sandwich sandwich : sandwiches) {
+            totalPrice += sandwich.getPrice();
+        }
+        for (Drink drink : drink) {
+            totalPrice += drink.getPrice();
+        }
+        for (Chip chip : chip) {
+            totalPrice += chip.getPrice();
+        }
         return totalPrice;
     }
 

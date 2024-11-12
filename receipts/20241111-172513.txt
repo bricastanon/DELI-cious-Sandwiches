@@ -1,0 +1,24 @@
+Customer: Brianna
+Email: bri@gmail.com
+Sandwiches:
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Size: 8, Bread: white, Toasted: true
+Toppings: 
+Drinks:
+Chips:
+Total Price: $63.0

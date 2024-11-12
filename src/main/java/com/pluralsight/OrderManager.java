@@ -17,27 +17,26 @@ public class OrderManager {
             System.out.println("1) New Order");
             System.out.println("0) Exit");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-            Customer customer = createCustomer();
-            Order order = new Order(customer, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+            scanner.nextLine(); // new line
 
-            switch (choice) {
-                case 1:
-                    startNewOrder();
-                    break;
-                case 0:
-                    System.out.println("Exiting the application. Goodbye!");
-                    return; // Exit the application
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+                switch (choice) {
+                    case 1:
+                        startNewOrder();
+                        break;
+                    case 0:
+                        System.out.println("Exiting the application. Goodbye!");
+                        System.exit(0); // Exit the application completely (it wouldn't exit at first)
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
             }
         }
-    }
 
     private void startNewOrder() {
         System.out.println("Starting a new order ");
         System.out.println("--------------------");
-        currentOrder = new Order(new Customer(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+        Customer customer = createCustomer(); // will ask for name and email
+        currentOrder = new Order(customer, new ArrayList<>(), new ArrayList<>(), new ArrayList<>()); // Use the created customer
         displayOrderScreen();
     }
 
@@ -68,7 +67,7 @@ public class OrderManager {
                     return;
                 case 0:
                     cancelOrder();
-                    displayHomeScreen();
+                    displayHomeScreen(); // had to put this instead of return bc it wouldn't go back to homescreen
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -79,7 +78,9 @@ public class OrderManager {
         String name = scanner.nextLine();
         System.out.println("Enter your email: ");
         String email = scanner.nextLine();
-        return new Customer(name, email);
+        Customer customer = new Customer(name, email);
+        System.out.println("Customer created: " + customer.getName() + ", " + customer.getEmail()); // Debugging print
+        return customer;
     }
 
     private Sandwich addSandwich() {
@@ -186,9 +187,10 @@ public class OrderManager {
             if (!removeTopping) {
                 sandwich.addToppings(new RegularTopping(topping));
             }
+        }
             currentOrder.addSandwich(sandwich);
             System.out.println("Sandwich added to the order.");
-        }
+
     }
 
 
@@ -227,7 +229,7 @@ public class OrderManager {
         double price = 1.50;
 
         Chip chip = new Chip(type, price);
-        currentOrder.addChips(chip);
+        currentOrder.addChips(chip); // adding to current order
         System.out.println("Chips added to the order.");
     }
 
