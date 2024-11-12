@@ -219,7 +219,7 @@ public class OrderManager {
 
         Drink drink = new Drink(size + " " + flavor, price);
         currentOrder.addDrink(drink);
-        System.out.println("Drink added to the order.");
+        System.out.println(drink.toString());
     }
 
     private void addChips() {
@@ -230,7 +230,7 @@ public class OrderManager {
 
         Chip chip = new Chip(type, price);
         currentOrder.addChips(chip); // adding to current order
-        System.out.println("Chips added to the order.");
+        System.out.println(chip.toString());
     }
 
     private void checkout() {

@@ -1,0 +1,8 @@
+Customer: Brianna
+Email: brianna@gmail.com
+Sandwiches:
+Size: 8, Bread: wheat, Toasted: true
+Toppings: 
+Drinks:
+Chips:
+Total Price: $7.0

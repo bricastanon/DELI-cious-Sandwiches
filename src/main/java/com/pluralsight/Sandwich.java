@@ -18,6 +18,7 @@ public class Sandwich implements Customize {
     @Override
     public void addToppings(Topping topping) {
         topping.add(topping);
+       // System.out.println("Toppings added: " + topping.getName());
     }
     @Override
     public void removeToppings(Topping topping) {

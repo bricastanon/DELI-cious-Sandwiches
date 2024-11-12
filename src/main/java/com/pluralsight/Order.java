@@ -21,37 +21,41 @@ public class Order implements DisplayOrder {
         for (Sandwich sandwich : sandwiches) {
             totalPrice += sandwich.getPrice();
         }
-        for (Drink drink : drink) {
-            totalPrice += drink.getPrice();
+        for (Drink d : drink) {
+            totalPrice += d.getPrice();
         }
-        for (Chip chip : chip) {
-            totalPrice += chip.getPrice();
+        for (Chip c : chip) {
+            totalPrice += c.getPrice();
         }
         return totalPrice;
     }
 
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
+        totalPrice = calculateTotal();
+        //System.out.println("Sandwich list: " + sandwiches);
     }
 
     public void removeSandwich(Sandwich sandwich) {
         sandwiches.remove(sandwich);
     }
 
-    public void addDrink(Drink drink) {
-        drink.add(drink);
+    public void addDrink(Drink d) {
+        drink.add(d);
+        totalPrice = calculateTotal();
     }
 
-    public void removeDrink(Drink drink) {
-        drink.remove(drink);
+    public void removeDrink(Drink d) {
+        drink.remove(d);
     }
 
-    public void addChips(Chip chip) {
-        chip.add(chip);
+    public void addChips(Chip c) {
+        chip.add(c);
+        totalPrice = calculateTotal();
     }
 
-    public void removeChips(Chip chip) {
-        chip.remove(chip);
+    public void removeChips(Chip c) {
+        chip.remove(c);
     }
 
     @Override
@@ -99,11 +103,11 @@ public class Order implements DisplayOrder {
         for (Sandwich sandwich : sandwiches) {
             sb.append(sandwich.toString()).append("\n");
         }
-        sb.append("Drinks:\n");
+       // sb.append("Drinks:\n");
         for (Drink drink : drink) {
             sb.append(drink.toString()).append("\n");
         }
-        sb.append("Chips:\n");
+       // sb.append("Chips:\n");
         for (Chip chip : chip) {
             sb.append(chip.toString()).append("\n");
         }
