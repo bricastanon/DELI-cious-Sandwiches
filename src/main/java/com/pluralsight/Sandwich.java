@@ -25,7 +25,6 @@ public class Sandwich implements Customize {
     @Override
     public void addToppings(Topping topping) {
         toppings.add(topping);
-       // System.out.println("Toppings added: " + topping.getName());
     }
     public void addExtraToppings(Topping topping) {
         extraToppings.add(topping); // This should work without errors now
@@ -35,10 +34,6 @@ public class Sandwich implements Customize {
     }
     public void addSide(Side side) {
         sides.add(side);
-    }
-    @Override
-    public void removeToppings(Topping topping) {
-        topping.remove(topping);
     }
     @Override
     public void setToasted(boolean isToasted) {
@@ -70,17 +65,12 @@ public class Sandwich implements Customize {
             case "12":
                 return 8.50;
             default:
-                throw new IllegalArgumentException("Invalid size");
+                throw new IllegalArgumentException("Invalid size"); // causes an error in the code if wrong size
         }
-
     }
     public String getSize() { return size;
     }
     public void setSize(String size) { this.size = size;
-    }
-    public String getBreadType() { return breadType;
-    }
-    public void setBreadType(String breadType) { this.breadType = breadType;
     }
     public List<Topping> getToppings() { return toppings;
     }
@@ -92,7 +82,7 @@ public class Sandwich implements Customize {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        // adding the price after size so it's easier to keep track
+        // adding the price after size so it's easier to keep track of purchase
         sb.append("Size: ").append(size).append(" ($").append(basePrice).append(")").append("\nBread: ").append(breadType).append("\nToasted: ").append(isToasted).append("\nToppings: ");
         // this is to stop the comma after a topping even if im not including the other toppings
         for (int i = 0; i < toppings.size(); i++) {
@@ -111,9 +101,6 @@ public class Sandwich implements Customize {
             if (i < extraToppings.size() - 1) {
                 sb.append(", ");
             }
-
-       // for (Topping topping : toppings) {
-          //  sb.append(topping.getName()).append(", ");
         }
         sb.append("\nSauces: ");
         for (int i = 0; i < sauces.size(); i++) {

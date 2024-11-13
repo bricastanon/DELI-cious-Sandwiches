@@ -1,0 +1,13 @@
+Customer: Brianna
+Email: castanonb@gmail.com
+Sandwiches:
+Size: 8 ($7.0)
+Bread: wheat
+Toasted: true
+Toppings: chicken ($2.0), american ($1.5), lettuce ($0.0), cucumbers ($0.0), guacamole ($0.0)
+Extra Toppings: american (extra, $0.6)
+Sauces: no sauce ($0.0)
+Sides: no side ($0.0)
+Drink: small coke, Price: $2.0
+Chips: og lays, Price: $1.5
+Total Price: $14.6

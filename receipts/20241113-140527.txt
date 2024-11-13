@@ -1,0 +1,11 @@
+Customer: Brianna
+Email: castanonb@gmail.com
+Sandwiches:
+Size: 4 ($5.5)
+Bread: white
+Toasted: true
+Toppings: steak ($1.0), swiss ($0.75), lettuce ($0.0), peppers ($0.0), onions ($0.0), guacamole ($0.0), mushrooms ($0.0)
+Extra Toppings: steak (extra, $0.5), swiss (extra, $0.3)
+Sauces: thousand islands ($0.0)
+Sides: 
+Total Price: $8.05

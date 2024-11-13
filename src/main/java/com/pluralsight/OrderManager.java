@@ -40,14 +40,13 @@ public class OrderManager {
     }
     private void displayOrderScreen() {
         while (true) {
+            System.out.println("-----------------------------");
             System.out.println("What would you like to order? ");
             System.out.println("-----------------------------");
             System.out.println("1) Add Sandwich");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips");
-            System.out.println("4) Add Sauce");
-            System.out.println("5) Add Side");
-            System.out.println("6) Checkout");
+            System.out.println("4) Checkout");
             System.out.println("0) Cancel Order");
 
             int choice = scanner.nextInt();
@@ -63,21 +62,7 @@ public class OrderManager {
                 case 3:
                     addChips();
                     break;
-                case 4: // sandwich has to also be purchased
-                    if (currentOrder != null && !currentOrder.getSandwiches().isEmpty()) {
-                        Sandwich lastSandwich = currentOrder.getSandwiches().get(currentOrder.getSandwiches().size() - 1);
-                        addSauce(lastSandwich);
-                    } else {
-                        System.out.println("Please add a sandwich first."); }
-                    break;
-                case 5:
-                    if (currentOrder != null && !currentOrder.getSandwiches().isEmpty()) {
-                        Sandwich lastSandwich = currentOrder.getSandwiches().get(currentOrder.getSandwiches().size() - 1);
-                        addSide(lastSandwich);
-                    } else {
-                        System.out.println("Please add a sandwich first."); }
-                    break;
-                case 6:
+                case 4:
                     checkout();
                     return;
                 case 0:
@@ -94,12 +79,12 @@ public class OrderManager {
         System.out.println("Enter your email: ");
         String email = scanner.nextLine();
         Customer customer = new Customer(name, email);
-        System.out.println("Customer created: " + customer.getName() + ", " + customer.getEmail()); // Debugging print
+        System.out.println(" ");
+        System.out.println("Customer created: " + customer.getName() + ", " + customer.getEmail());
         return customer;
     }
-
     private Sandwich addSandwich() {
-        System.out.println("What size would you like? (4, 8, 12 inches): ");
+        System.out.println("What size sandwich would you like? (4, 8, 12 inches): ");
         String size = scanner.nextLine();
         System.out.println("What bread would you like? (white, wheat, rye, wrap): ");
         String breadType = scanner.nextLine();
@@ -110,13 +95,13 @@ public class OrderManager {
         customizeSandwich(sandwich);
         return sandwich;
     }
-
     private void customizeSandwich(Sandwich sandwich) {
         addMeat(sandwich);
         addCheese(sandwich);
         addRegularToppings(sandwich);
+        addSauce(sandwich);
+        addSide(sandwich);
     }
-
     private void addMeat(Sandwich sandwich) {
         System.out.println("What meat would you like? (steak, ham, salami, roast beef, chicken, bacon): ");
         String meat = scanner.nextLine();
@@ -127,7 +112,6 @@ public class OrderManager {
             sandwich.addExtraToppings(new ExtraTopping(meat, calculateExtraMeatCost(sandwich.getSize())));
         }
     }
-
     private double calculateMeatCost(String size) {
         switch (size) {
             case "4":
@@ -137,10 +121,9 @@ public class OrderManager {
             case "12":
                 return 3.00;
             default:
-                throw new IllegalArgumentException("Invalid size");
+                throw new IllegalArgumentException("Invalid size."); // causes an error in output
         }
     }
-
     private double calculateExtraMeatCost(String size) {
         switch (size) {
             case "4":
@@ -150,10 +133,9 @@ public class OrderManager {
             case "12":
                 return 1.50;
             default:
-                throw new IllegalArgumentException("Invalid size");
+                throw new IllegalArgumentException("Invalid size"); // causes an error in output
         }
     }
-
     private void addCheese(Sandwich sandwich) {
         System.out.println("What cheese would you like? (american, provolone, chedder, swiss) ");
         String cheese = scanner.nextLine();
@@ -166,7 +148,6 @@ public class OrderManager {
             }
         }
     }
-
     private double calculateCheeseCost(String size) {
         switch (size) {
             case "4":
@@ -176,10 +157,9 @@ public class OrderManager {
             case "12":
                 return 2.25;
             default:
-                throw new IllegalArgumentException("Invalid size");
+                throw new IllegalArgumentException("Invalid size"); // causes an error in output
         }
     }
-
     private double calculateExtraCheeseCost(String size) {
         switch (size) {
             case "4":
@@ -192,7 +172,6 @@ public class OrderManager {
                 throw new IllegalArgumentException("Invalid size");
         }
     }
-
     private void addRegularToppings(Sandwich sandwich) {
         System.out.println("Add regular toppings to your sandwich (all included):");
         String[] regularToppings = {"lettuce", "peppers", "onions", "tomatoes", "jalapenos", "cucumbers", "pickles", "guacamole", "mushrooms"};
@@ -203,27 +182,28 @@ public class OrderManager {
                 sandwich.addToppings(new RegularTopping(topping));
             }
         }
-            currentOrder.addSandwich(sandwich);
-            System.out.println("Sandwich added to the order.");
-
     }
     private void addSauce(Sandwich sandwich) {
-        System.out.println("What sauce would you like to add? (mayo, mustard, ketchup, ranch, thousand islands, vinaigrette, none) ");
+        System.out.println("What sauce would you like to add? (mayo, mustard, ketchup, ranch, thousand islands, vinaigrette, no sauce) ");
         String sauceName = scanner.nextLine();
-        double price = 0.0;
+        double price = 0.0; // included
         Sauce sauce = new Sauce(sauceName, price);
         sandwich.addSauce(sauce);
-        System.out.println("Sauce added: " + sauce.toString());
+        System.out.println("Sauce added: " + sauce.toString()); // adds description in output
     }
     private void addSide(Sandwich sandwich) {
-        System.out.println("What side would you like? (cookie, brownie, none) ");
+        System.out.println("What side would you like? (au jus, sauce, no side) ");
         String sideName = scanner.nextLine();
         double price = 0.0; // all sides come with the meal
         Side side = new Side(sideName, price);
-        //sandwich.addSide(side);
-        System.out.println("Side added: " + side.toString());
-    }
+        sandwich.addSide(side);
+        System.out.println("Side added: " + side.toString()); // adds description in output
 
+        currentOrder.addSandwich(sandwich);
+        System.out.println(" ");
+        System.out.println("Sandwich added to the order.");
+        System.out.println(" ");
+    }
     private void addDrink() {
         System.out.println("Add Drink");
         System.out.println("Enter drink size (small, medium, large): ");
@@ -243,56 +223,57 @@ public class OrderManager {
                 System.out.println("Invalid drink size. Please try again.");
                 return;
         }
-
         System.out.print("Enter drink flavor: ");
         String flavor = scanner.nextLine();
-
+        System.out.println(" ");
         Drink drink = new Drink(size + " " + flavor, price);
         currentOrder.addDrink(drink);
-        System.out.println(drink.toString());
+        System.out.println(drink.toString()); // adds description in output
     }
-
     private void addChips() {
         System.out.println("Add Chips");
-        System.out.println("What chips would you like? (original lays, lay bbq, sour cream and onion, sun chips): ");
+        System.out.println("What chips would you like? (og lays, lays bbq, sour cream and onion, sun chips): ");
         String type = scanner.nextLine();
         double price = 1.50;
-
+        System.out.println(" ");
         Chip chip = new Chip(type, price);
         currentOrder.addChips(chip); // adding to current order
-        System.out.println(chip.toString());
+        System.out.println(chip.toString()); // adds description in output
     }
-
     private void checkout() {
-        System.out.println("Checkout");
+        System.out.println("--------------");
+        System.out.println("   Checkout ");
+        System.out.println("--------------");
         currentOrder.displayOrderDetails();
         double totalPrice = TotalCost.calculateTotal(currentOrder);
-        System.out.println("Your total cost comes out to: $ " + totalPrice);
+        System.out.println("Order details: "); // to show complete description in output
+        System.out.println(currentOrder.toString());
+        System.out.println("Place Order");
+        System.out.println("~~~~~~~~~~~");
         System.out.println("1) Confirm");
         System.out.println("0) Cancel Order");
 
         int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); // new line
 
         if (choice == 1) {
             saveOrderToFile(currentOrder);
             System.out.println("Order confirmed and receipt saved.");
+            System.out.println(" ");
         } else {
             System.out.println("Order cancelled.");
+            System.out.println(" ");
         }
     }
-
     private void cancelOrder() {
         System.out.println("Order cancelled. Returning to home screen.");
     }
-
     private void saveOrderToFile(Order order) {
         String folderName = "receipts";
         File folder = new File(folderName);
         if (!folder.exists()) {
             folder.mkdir();
         }
-
         String fileName = folderName + "/" + new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date()) + ".txt";
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.write(order.toString()); // Assuming your Order class has a meaningful toString() method

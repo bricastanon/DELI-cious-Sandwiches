@@ -1,0 +1,6 @@
+Customer: Alice
+Email: alice@gmail.com
+Sandwiches:
+Chips: lay bbq, Price: $1.5
+Chips: sun chips, Price: $1.5
+Total Price: $3.0

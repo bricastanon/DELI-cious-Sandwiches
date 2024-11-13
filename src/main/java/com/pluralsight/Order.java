@@ -33,75 +33,35 @@ public class Order implements DisplayOrder {
     }
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
-        totalPrice = calculateTotal();
+        totalPrice = calculateTotal(); // had to add all these bc price wouldn't calculate
     }
-    public void removeSandwich(Sandwich sandwich) {
-        sandwiches.remove(sandwich);
-    }
-
     public void addDrink(Drink d) {
         drink.add(d);
         totalPrice = calculateTotal();
     }
-
-    public void removeDrink(Drink d) {
-        drink.remove(d);
-    }
-
     public void addChips(Chip c) {
         chip.add(c);
-        totalPrice = calculateTotal();
-    }
-
-    public void removeChips(Chip c) {
-        chip.remove(c);
-    }
-    public void addSauce(Sauce sauce) {
-        sauces.add(sauce);
-        totalPrice = calculateTotal();
-    }
-    public void addSide(Side side) {
-        side.add(side);
         totalPrice = calculateTotal();
     }
     @Override
     public void displayOrderDetails() {
     }
-
-    public Customer getCustomer() {
-        return customer;
+    public Customer getCustomer() { return customer;
     }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomer(Customer customer) { this.customer = customer;
     }
-
-    public List<Sandwich> getSandwiches() {
-        return sandwiches;
+    public List<Sandwich> getSandwiches() { return sandwiches;
     }
-
-    public void setSandwiches(List<Sandwich> sandwiches) {
-        this.sandwiches = sandwiches;
+    public void setSandwiches(List<Sandwich> sandwiches) { this.sandwiches = sandwiches;
     }
-
-    public List<Drink> getDrinks() {
-        return drink;
+    public List<Drink> getDrinks() { return drink;
     }
-
-    public void setDrink(List<Drink> drink) {
-        this.drink = drink;
+    public void setDrink(List<Drink> drink) { this.drink = drink;
     }
-
-    public List<Chip> getChips() {
-        return chip;
+    public List<Chip> getChips() { return chip;
     }
-
-    public void setChip(List<Chip> chip) {
-        this.chip = chip;
-    }
-
     @Override
-    public String toString() {
+    public String toString() { // this is the output on the receipt
         StringBuilder sb = new StringBuilder();
         sb.append("Customer: ").append(customer.getName()).append("\n");
         sb.append("Email: ").append(customer.getEmail()).append("\n");
@@ -109,11 +69,9 @@ public class Order implements DisplayOrder {
         for (Sandwich sandwich : sandwiches) {
             sb.append(sandwich.toString()).append("\n");
         }
-       // sb.append("Drinks:\n");
         for (Drink drink : drink) {
             sb.append(drink.toString()).append("\n");
         }
-       // sb.append("Chips:\n");
         for (Chip chip : chip) {
             sb.append(chip.toString()).append("\n");
         }
