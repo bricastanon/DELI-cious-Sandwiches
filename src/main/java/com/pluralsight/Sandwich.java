@@ -7,6 +7,8 @@ public class Sandwich implements Customize {
     private String breadType;
     private List<Topping> toppings;
     private List<Topping> extraToppings;
+    private List<Sauce> sauces;
+    private List<Side> sides;
     private boolean isToasted;
     private double basePrice;
 
@@ -15,6 +17,8 @@ public class Sandwich implements Customize {
         this.breadType = breadType;
         this.toppings = toppings;
         this.extraToppings = new ArrayList<>();
+        this.sauces = new ArrayList<>();
+        this.sides = new ArrayList<>();
         this.isToasted = isToasted;
         this.basePrice = calculateBasePrice();
     }
@@ -25,6 +29,12 @@ public class Sandwich implements Customize {
     }
     public void addExtraToppings(Topping topping) {
         extraToppings.add(topping); // This should work without errors now
+    }
+    public void addSauce(Sauce sauce) {
+        sauces.add(sauce);
+    }
+    public void addSide(Side side) {
+        sides.add(side);
     }
     @Override
     public void removeToppings(Topping topping) {
@@ -42,6 +52,12 @@ public class Sandwich implements Customize {
         // this is adding the total of the extra toppings to the total price
         for (Topping extraTopping : extraToppings) {
             totalPrice += extraTopping.getPrice();
+        }
+        for (Sauce sauce : sauces) {
+            totalPrice += sauce.getPrice();
+        }
+        for (Side side : sides) {
+            totalPrice += side.getPrice();
         }
         return totalPrice;
     }
@@ -99,7 +115,22 @@ public class Sandwich implements Customize {
        // for (Topping topping : toppings) {
           //  sb.append(topping.getName()).append(", ");
         }
+        sb.append("\nSauces: ");
+        for (int i = 0; i < sauces.size(); i++) {
+            Sauce sauce = sauces.get(i);
+            sb.append(sauce.getName()).append(" ($").append(sauce.getPrice()).append(")");
+            if (i < sauces.size() - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("\nSides: ");
+        for (int i = 0; i < sides.size(); i++) {
+            Side side = sides.get(i);
+            sb.append(side.getName()).append(" ($").append(side.getPrice()).append(")");
+            if (i < sides.size() - 1) {
+                sb.append(", ");
+            }
+        }
         return sb.toString();
     }
-
 }

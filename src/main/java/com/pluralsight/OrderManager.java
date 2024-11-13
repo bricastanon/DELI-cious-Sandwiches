@@ -43,10 +43,13 @@ public class OrderManager {
     private void displayOrderScreen() {
         while (true) {
             System.out.println("What would you like to order? ");
+            System.out.println("-----------------------------");
             System.out.println("1) Add Sandwich");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips");
-            System.out.println("4) Checkout");
+            System.out.println("4) Add Sauce");
+            System.out.println("5) Add Side");
+            System.out.println("6) Checkout");
             System.out.println("0) Cancel Order");
 
             int choice = scanner.nextInt();
@@ -63,6 +66,20 @@ public class OrderManager {
                     addChips();
                     break;
                 case 4:
+                    if (currentOrder != null && !currentOrder.getSandwiches().isEmpty()) {
+                        Sandwich lastSandwich = currentOrder.getSandwiches().get(currentOrder.getSandwiches().size() - 1);
+                        addSauce(lastSandwich);
+                    } else {
+                        System.out.println("Please add a sandwich first."); }
+                    break;
+                case 5:
+                    if (currentOrder != null && !currentOrder.getSandwiches().isEmpty()) {
+                        Sandwich lastSandwich = currentOrder.getSandwiches().get(currentOrder.getSandwiches().size() - 1);
+                        addSide(lastSandwich);
+                    } else {
+                        System.out.println("Please add a sandwich first."); }
+                    break;
+                case 6:
                     checkout();
                     return;
                 case 0:
@@ -142,7 +159,7 @@ public class OrderManager {
     private void addCheese(Sandwich sandwich) {
         System.out.println("What cheese would you like? (american, provolone, chedder, swiss) ");
         String cheese = scanner.nextLine();
-        if (!cheese.equalsIgnoreCase("none")) {
+        if (!cheese.equalsIgnoreCase("none")) { // if they don't want cheese
             sandwich.addToppings(new PremiumTopping(cheese, calculateCheeseCost(sandwich.getSize())));
             System.out.println("Would you like to add extra cheese? (yes/no) ");
             boolean extraCheese = scanner.nextLine().equalsIgnoreCase("yes");
@@ -192,7 +209,22 @@ public class OrderManager {
             System.out.println("Sandwich added to the order.");
 
     }
-
+    private void addSauce(Sandwich sandwich) {
+        System.out.println("What sauce would you like to add? (mayo, mustard, ketchup, ranch, thousand islands, vinaigrette, none) ");
+        String sauceName = scanner.nextLine();
+        double price = 0.0;
+        Sauce sauce = new Sauce(sauceName, price);
+        sandwich.addSauce(sauce);
+        System.out.println("Sauce added: " + sauce.toString());
+    }
+    private void addSide(Sandwich sandwich) {
+        System.out.println("What side would you like? (cookie, brownie, none) ");
+        String sideName = scanner.nextLine();
+        double price = 0.0;
+        Side side = new Side(sideName, price);
+        sandwich.addSide(side);
+        System.out.println("Side added: " + side.toString());
+    }
 
     private void addDrink() {
         System.out.println("Add Drink");
