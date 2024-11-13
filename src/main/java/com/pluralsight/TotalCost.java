@@ -5,17 +5,14 @@ public class TotalCost {
         double total = 0.0;
 
         for (Sandwich sandwich : order.getSandwiches()) {
-            total += sandwich.getPrice(); // Assuming Sandwich has a getPrice() method
+            total += sandwich.getPrice(); // Sandwich has a getPrice() method
         }
-
         for (Drink drink : order.getDrinks()) {
             total += drink.getPrice();
         }
-
         for (Chip chip : order.getChips()) {
             total += chip.getPrice();
         }
-
         return total;
     }
 }

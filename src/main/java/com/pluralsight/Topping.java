@@ -8,10 +8,6 @@ public class Topping {
     }
     public String getName() { return name;
     }
-    public void add(Topping toppings) {
-    }
-    public void remove(Topping topping) {
-    }
     public double getPrice() {
         return 0.0; // no additional cost for toppings included
     }
