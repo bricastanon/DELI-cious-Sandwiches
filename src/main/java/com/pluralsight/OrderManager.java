@@ -63,7 +63,7 @@ public class OrderManager {
                 case 3:
                     addChips();
                     break;
-                case 4:
+                case 4: // sandwich has to also be purchased
                     if (currentOrder != null && !currentOrder.getSandwiches().isEmpty()) {
                         Sandwich lastSandwich = currentOrder.getSandwiches().get(currentOrder.getSandwiches().size() - 1);
                         addSauce(lastSandwich);
@@ -71,7 +71,11 @@ public class OrderManager {
                         System.out.println("Please add a sandwich first."); }
                     break;
                 case 5:
-                    addSide();
+                    if (currentOrder != null && !currentOrder.getSandwiches().isEmpty()) {
+                        Sandwich lastSandwich = currentOrder.getSandwiches().get(currentOrder.getSandwiches().size() - 1);
+                        addSide(lastSandwich);
+                    } else {
+                        System.out.println("Please add a sandwich first."); }
                     break;
                 case 6:
                     checkout();
@@ -211,7 +215,7 @@ public class OrderManager {
         sandwich.addSauce(sauce);
         System.out.println("Sauce added: " + sauce.toString());
     }
-    private void addSide() {
+    private void addSide(Sandwich sandwich) {
         System.out.println("What side would you like? (cookie, brownie, none) ");
         String sideName = scanner.nextLine();
         double price = 0.0; // all sides come with the meal

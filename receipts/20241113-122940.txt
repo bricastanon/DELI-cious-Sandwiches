@@ -1,0 +1,13 @@
+Customer: Brianna
+Email: brianna_cas@gmail.com
+Sandwiches:
+Size: 8 ($7.0)
+Bread: wheat
+Toasted: true
+Toppings: chicken ($2.0), american ($1.5), lettuce ($0.0), cucumbers ($0.0), guacamole ($0.0)
+Extra Toppings: american (extra, $0.6)
+Sauces: vinaigrette ($0.0)
+Sides: 
+Drink: medium tea, Price: $2.5
+Chips: sun chips, Price: $1.5
+Total Price: $15.1

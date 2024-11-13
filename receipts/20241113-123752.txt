@@ -1,0 +1,5 @@
+Customer: Brianna
+Email: briicastanon@gmail.com
+Sandwiches:
+Chips: lay bbq, Price: $1.5
+Total Price: $1.5

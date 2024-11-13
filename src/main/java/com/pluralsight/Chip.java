@@ -17,8 +17,7 @@ public class Chip {
     public void remove(Chip chip) {
     }
     @Override
-    public String toString() {
+    public String toString() { // this is the output on the receipt
         return "Chips: " + name + ", Price: $" + price;
     }
-
 }

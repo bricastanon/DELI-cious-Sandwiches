@@ -20,27 +20,21 @@ public class Order implements DisplayOrder {
         this.sides = new ArrayList<>();
         this.totalPrice = calculateTotal();
     }
-
     private double calculateTotal() {
         totalPrice = 0;
         for (Sandwich sandwich : sandwiches) {
             totalPrice += sandwich.getPrice();
-        }
-        for (Drink d : drink) {
+        } for (Drink d : drink) {
             totalPrice += d.getPrice();
-        }
-        for (Chip c : chip) {
+        } for (Chip c : chip) {
             totalPrice += c.getPrice();
         }
         return totalPrice;
     }
-
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
         totalPrice = calculateTotal();
-        //System.out.println("Sandwich list: " + sandwiches);
     }
-
     public void removeSandwich(Sandwich sandwich) {
         sandwiches.remove(sandwich);
     }
