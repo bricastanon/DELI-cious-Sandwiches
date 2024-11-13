@@ -31,7 +31,6 @@ public class OrderManager {
                 }
             }
         }
-
     private void startNewOrder() {
         System.out.println("Starting a new order ");
         System.out.println("--------------------");
@@ -39,7 +38,6 @@ public class OrderManager {
         currentOrder = new Order(customer, new ArrayList<>(), new ArrayList<>(), new ArrayList<>()); // Use the created customer
         displayOrderScreen();
     }
-
     private void displayOrderScreen() {
         while (true) {
             System.out.println("What would you like to order? ");
@@ -73,11 +71,7 @@ public class OrderManager {
                         System.out.println("Please add a sandwich first."); }
                     break;
                 case 5:
-                    if (currentOrder != null && !currentOrder.getSandwiches().isEmpty()) {
-                        Sandwich lastSandwich = currentOrder.getSandwiches().get(currentOrder.getSandwiches().size() - 1);
-                        addSide(lastSandwich);
-                    } else {
-                        System.out.println("Please add a sandwich first."); }
+                    addSide();
                     break;
                 case 6:
                     checkout();
@@ -217,12 +211,12 @@ public class OrderManager {
         sandwich.addSauce(sauce);
         System.out.println("Sauce added: " + sauce.toString());
     }
-    private void addSide(Sandwich sandwich) {
+    private void addSide() {
         System.out.println("What side would you like? (cookie, brownie, none) ");
         String sideName = scanner.nextLine();
-        double price = 0.0;
+        double price = 0.0; // all sides come with the meal
         Side side = new Side(sideName, price);
-        sandwich.addSide(side);
+        //sandwich.addSide(side);
         System.out.println("Side added: " + side.toString());
     }
 

@@ -16,6 +16,10 @@ public class Side {
     public String toString() {
         return name + " ($" + price + ")";
     }
+
+    public void add(Side side) {
+
+    }
 }
 
 
