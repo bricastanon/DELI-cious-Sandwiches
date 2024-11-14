@@ -1,0 +1,12 @@
+Customer: Brianna Castanon
+Email: bcastanon@gmail.com
+Sub Size: 12 ($8.5)
+Bread: wheat
+Toasted: true
+Toppings: chicken ($3.0), swiss ($2.25), lettuce ($0.0), peppers ($0.0), jalapenos ($0.0), cucumbers ($0.0)
+Extra Toppings: swiss (extra, $0.9)
+Sauces: thousand islands, vinaigrette ($0.0)
+Sides: au jus ($0.0)
+Drink: small tea, Price: $2.0
+Chips: og lays, Price: $1.5
+Total Price: $18.15

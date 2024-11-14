@@ -1,0 +1,13 @@
+Customer: Brianna Castanon
+Email: bricas@gmail.com
+Sub Size: 8in ($7.0)
+Bread: wheat
+Toasted: true
+Toppings: steak ($2.0), american ($1.5), lettuce ($0.0), peppers ($0.0), onions ($0.0), tomatoes ($0.0), jalapenos ($0.0), cucumbers ($0.0), pickles ($0.0), guacamole ($0.0), mushrooms ($0.0)
+Extra Toppings: steak (extra, $1.0), american (extra, $0.6)
+Sauces: no sauce ($0.0)
+Sides: no side ($0.0)
+Drink: small coke, Price: $2.0
+Drink: medium tea, Price: $2.5
+Chips: sun chips, Price: $1.5
+Total Price: $18.1

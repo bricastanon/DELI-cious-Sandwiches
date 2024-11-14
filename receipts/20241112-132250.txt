@@ -1,8 +1,0 @@
-Customer: Alex
-Email: alex@gmail.com
-Sandwiches:
-Size: 4, Bread: white, Toasted: true
-Toppings: 
-Drinks:
-Chips:
-Total Price: $5.5

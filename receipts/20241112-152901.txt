@@ -1,6 +1,0 @@
-Customer: Brianna
-Email: bri@yahoo.com
-Sandwiches:
-Size: 8, Bread: wheat, Toasted: true
-Toppings: chicken, chicken, american, american, lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, guacamole, 
-Total Price: $12.1

@@ -1,0 +1,5 @@
+Customer: Bri Castanon
+Email: bcastanon@gmail.com
+Drink: small tea, Price: $2.0
+Chips: og lays, Price: $1.5
+Total Price: $3.5

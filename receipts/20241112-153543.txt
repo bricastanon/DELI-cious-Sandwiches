@@ -1,6 +1,0 @@
-Customer: Lamis
-Email: lamis@gmail.com
-Sandwiches:
-Size: 12, Bread: white, Toasted: true
-Toppings: steak, steak, american, american, lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, guacamole
-Total Price: $16.15

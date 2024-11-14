@@ -1,6 +1,0 @@
-Customer: Brianna Castanon
-Email: bricastanon@gmail.com
-Sandwiches:
-Size: 8, Bread: wheat, Toasted: true
-Toppings: 
-Total Price: $11.0

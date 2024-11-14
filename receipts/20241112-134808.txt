@@ -1,8 +1,0 @@
-Customer: Oscar
-Email: osc@gmail.com
-Sandwiches:
-Drinks:
-Drink added: small sprite, Price: $2.0
-Chips:
-Chips added: sun chips, Price: $1.5
-Total Price: $3.5

@@ -1,0 +1,13 @@
+Customer: Brianna Castanon
+Email: bricastanon@gmail.com
+Sandwiches:
+Size: 8 ($7.0)
+Bread: white
+Toasted: true
+Toppings: chicken ($2.0), swiss ($1.5), lettuce ($0.0), peppers ($0.0), jalapenos ($0.0), cucumbers ($0.0), guacamole ($0.0)
+Extra Toppings: chicken (extra, $1.0), swiss (extra, $0.6)
+Sauces: vinaigrette ($0.0)
+Sides: au jus ($0.0)
+Drink: small coke, Price: $2.0
+Chips: og lays, Price: $1.5
+Total Price: $15.6

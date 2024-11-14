@@ -1,8 +1,0 @@
-Customer: David
-Email: david@gmail.com
-Sandwiches:
-Size: 12, Bread: wheat, Toasted: true
-Toppings: 
-Drink: small tea, Price: $2.0
-Chips: original lays, Price: $1.5
-Total Price: $12.0

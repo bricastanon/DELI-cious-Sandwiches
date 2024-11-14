@@ -1,0 +1,5 @@
+Customer: Dan
+Email: dan@gmail.com
+Sandwiches:
+Chips: lays bbq, Price: $1.5
+Total Price: $1.5

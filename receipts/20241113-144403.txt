@@ -1,5 +1,0 @@
-Customer: Brianna
-Email: bcas@gmail.com
-Sandwiches:
-Drink: small coke, Price: $2.0
-Total Price: $2.0

@@ -1,5 +1,0 @@
-Customer: Brianna
-Email: bcas@gmail.com
-Sandwiches:
-Chips: sun chips, Price: $1.5
-Total Price: $1.5

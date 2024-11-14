@@ -1,8 +1,0 @@
-Customer: Alice
-Email: alice@gmail.com
-Sandwiches:
-Size: 8, Bread: white, Toasted: true
-Toppings: 
-Drinks:
-Chips:
-Total Price: $7.0

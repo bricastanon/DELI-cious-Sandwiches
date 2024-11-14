@@ -1,9 +1,0 @@
-Customer: Dan
-Email: dan@gmail.com
-Sandwiches:
-Size: 4 ($5.5)
-Bread: white
-Toasted: true
-Toppings: steak, american, lettuce, peppers, onions
-Extra Toppings: 
-Total Price: $7.25

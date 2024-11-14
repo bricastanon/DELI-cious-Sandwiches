@@ -1,0 +1,14 @@
+Customer: Brianna Castanon
+Email: bricastanon@gmail.com
+Items:
+Sandwich:
+Size: 12 ($8.5)
+Bread: wheat
+Toasted: true
+Toppings: chicken ($3.0), american ($2.25), lettuce ($0.0), cucumbers ($0.0), guacamole ($0.0)
+Extra Toppings: american (extra, $0.9)
+Sauces: no sauce ($0.0)
+Sides: no side ($0.0)
+Drink: small tea, Price: $2.0
+Chips: sun chips, Price: $1.5
+Total Price: $18.15

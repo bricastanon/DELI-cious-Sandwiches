@@ -1,7 +1,0 @@
-Customer: Brianna
-Email: Brianna@gmail.com
-Sandwiches:
-Size: 12, Bread: white, Toasted: true
-Toppings: chicken, american, lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, guacamole
-Extra Toppings: chicken (extra, $1.5), american (extra, $0.9)
-Total Price: $16.15

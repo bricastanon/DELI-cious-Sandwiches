@@ -1,0 +1,6 @@
+Customer: Kemar
+Email: kemar@gmail.com
+Sandwiches:
+Drink: medium sprite, Price: $2.5
+Chips: sour cream and onion, Price: $1.5
+Total Price: $4.0

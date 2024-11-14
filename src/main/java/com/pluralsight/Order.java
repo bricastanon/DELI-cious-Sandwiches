@@ -61,7 +61,8 @@ public class Order implements DisplayOrder {
         StringBuilder sb = new StringBuilder();
         sb.append("Customer: ").append(customer.getName()).append("\n");
         sb.append("Email: ").append(customer.getEmail()).append("\n");
-        sb.append("Sandwiches:\n");
+       // sb.append("Items:\n");
+       // sb.append("------\n");
         for (Sandwich sandwich : sandwiches) {
             sb.append(sandwich.toString()).append("\n");
         }

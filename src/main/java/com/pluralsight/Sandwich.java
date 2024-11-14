@@ -83,7 +83,7 @@ public class Sandwich implements Customize {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         // adding the price after size so it's easier to keep track of purchase
-        sb.append("Size: ").append(size).append(" ($").append(basePrice).append(")").append("\nBread: ").append(breadType).append("\nToasted: ").append(isToasted).append("\nToppings: ");
+        sb.append("Sub Size: ").append(size).append("in").append(" ($").append(basePrice).append(")").append("\nBread: ").append(breadType).append("\nToasted: ").append(isToasted).append("\nToppings: ");
         // this is to stop the comma after a topping even if im not including the other toppings
         for (int i = 0; i < toppings.size(); i++) {
             // to show the price of the toppings so it's easier to keep track
