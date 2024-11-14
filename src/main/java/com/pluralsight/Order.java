@@ -7,8 +7,6 @@ public class Order implements DisplayOrder {
     private List<Sandwich> sandwiches;
     private List<Drink> drink;
     private List<Chip> chip;
-    private List<Sauce> sauces;
-    private List<Side> sides;
     private double totalPrice;
 
     public Order(Customer customer, List<Sandwich> sandwiches, List<Drink> drink, List<Chip> chip) {
@@ -16,8 +14,6 @@ public class Order implements DisplayOrder {
         this.sandwiches = sandwiches;
         this.drink = drink;
         this.chip = chip;
-        this.sauces = new ArrayList<>();
-        this.sides = new ArrayList<>();
         this.totalPrice = calculateTotal();
     }
     private double calculateTotal() {

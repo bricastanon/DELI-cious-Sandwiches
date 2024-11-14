@@ -101,7 +101,7 @@ public class Sandwich implements Customize {
             if (i < extraToppings.size() - 1) {
                 sb.append(", ");
             }
-        }
+        } // adding to receipt
         sb.append("\nSauces: ");
         for (int i = 0; i < sauces.size(); i++) {
             Sauce sauce = sauces.get(i);
@@ -109,7 +109,7 @@ public class Sandwich implements Customize {
             if (i < sauces.size() - 1) {
                 sb.append(", ");
             }
-        }
+        } // adding to receipt
         sb.append("\nSides: ");
         for (int i = 0; i < sides.size(); i++) {
             Side side = sides.get(i);
